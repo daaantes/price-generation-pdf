@@ -1,183 +1,132 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
-.container2 {
-    margin: 0 auto;
-    position: relative;
+.header__title {
+  text-transform: uppercase;
 }
 
-.container2 input[type=checkbox] {
-    position: absolute;
-    width: 20px;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.container2 .checkbox[data-x][data-y] {
-    left: calc(var(--x) * 1px);
-    top: calc(var(--y) * 1px);
+.logo__title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
-.grid{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 3fr 1fr;
-    column-gap: 10px;
+.form__control {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  width: 100%;
 }
 
-.grid2{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+.form__control input {
+  width: 100%;
+  outline: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  line-height: 1.2rem;
+  margin-bottom: 8px;
 }
 
-.grid3{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    column-gap: 10px;
+.form__inline-group {
+  display: grid;
+  gap: 8px;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.form__inline-group--2-1 {
+  grid-template-columns: 2fr 1fr;
 }
 
-h1 {
-    font-size: 25px;
-    margin-bottom: 10px;
+.form__inline-group--1-2-1 {
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
-.form-info {
-    margin-bottom: 10px;
-    font-size: 20px;
+.price-checkbox {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 50px 100px auto;
+  grid-template-rows: 50px;
+  align-items: center;
 }
 
-.form-info input[type=text] {
-    font-size: 17px;
+.price-checkbox__check {
+  width: 100%;
+  height: 100%;
 }
 
-h2 {
-    font-weight: normal;
-    font-size: 25px;
+.price-checkbox__price {
+  outline: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
 }
 
-li {
-    font-size: 30px;
+.price-checkbox__currency {
+  line-height: 1.2rem;
+  font-size: 1.2rem;
 }
 
-li label{
-    font-size: 20px;
+.list-item__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-p {
-    font-size: 15px;
-    align-items: right;
+.image__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-form {
-    padding: 20px;
+.image__container img {
+  display: block;
+  object-fit: contain;
+  width: 100%;
 }
 
-.form-section {
-    margin-bottom: 20px;
+.list-item {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "li-title"
+    "li-description"
+    "li-content";
 }
 
-.form-group {
-    margin-bottom: 10px;
+.list-item--inline {
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-items: space-between;
+  grid-template-areas:
+    "li-title li-content"
+    "li-description li-content";
 }
 
-.form-section input {
-    outline: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
+.list-item__title {
+  grid-area: li-title;
+  margin: 0;
 }
 
-.form-group label {
-    font-size: 25px;
+.list-item__description {
+  grid-area: li-description;
+  margin: 0;
 }
 
-.form-group input {
-    padding: 8px;
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-.form-group span {
-    font-weight: normal;
-    display: block;
-    font-size: 15px;
-}
-
-.form-group input[type=checkbox] {
-    width:50px;
-    height:50px;
-}
-
-.form-inline {
-    display: inline-block;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.price-field {
-    display: inline-block;
-    gap: 20px;
-}
-
-.price-field label {
-    font-size: 20px;
-}
-
-
-.price-field input[type=text] {
-    font-size: 25px;
-    width: 55px;
-}
-
-.car-images img{
-    width: 100%;
-    height: auto;
-}
-
-.comments input[type=text] {
-    width: 750px;
-}
-
-.date label {
-    text-align: left;
-    font-size:20px;
-}
-.date input{
-    font-size: 20px;
-    width: 140px;;
-}
-
-.manager label {
-    text-align: left;
-    font-size:20px;
-}
-
-.manager input {
-    font-size: 20px;
-    width: 200px;
-}
-
-.checkbox-list {    
-    margin-top: 30px;
-    display: block;
-}
-
-.checkbox-list input[type=checkbox] {
-    width: 50px;
-    height: 50px;
+.list-item__content {
+  grid-area: li-content;
 }

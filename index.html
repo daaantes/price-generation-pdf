@@ -1,334 +1,577 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Лист осмотра автомобиля</title>
-</head>
-<body>
-    
-    <div class="container">
-        <header class="grid">
-            <h1>ЛИСТ ОСМОТРА АВТОМОБИЛЯ</h1>
-            <img src="logo.png" alt="Логотип">
-        </header>
-            </head>
-        
-        <!--Информация-->
-        <form action="">
-            <div class="form-section">
-                <div class="form-inline form-info">
-                    <label for="customer">Заказчик (контакт, тел.):</label>
-                    <input type="text" id="customer" name="customer" size="54">
-                </div>
 
-                <div class="form-inline form-info">
-                    <div class="form-inline">
-                        <label for="car">Автомобиль:</label>
-                        <input type="text" id="car" name="car" size="30">
-                    </div>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Лист осмотра автомобиля</h1>
 
-                    <div class="form-inline form-info">
-                        <label for="plate">Гос. номер:</label>
-                        <input type="text" id="plate" name="plate" size="18">
-                    </div>
-                </div>
+      <div class="header__logo logo">
+        <b class="logo__title">Detailing</b>
+        <img class="logo__image" src="./assets/logo-ua.svg" alt="Logo" />
+      </div>
+    </header>
+
+    <form class="form">
+      <div class="form__control">
+        <label for="customer">Заказчик (контакт, тел.):</label>
+        <input type="text" id="customer" name="customer" />
+      </div>
+
+      <div class="form__inline-group form__inline-group--2-1">
+        <div class="form__control">
+          <label for="car">Автомобиль:</label>
+          <input type="text" id="car" name="car" />
+        </div>
+
+        <div class="form__control">
+          <label for="plate">Гос. номер:</label>
+          <input type="text" id="plate" name="plate" />
+        </div>
+      </div>
+
+      <ol>
+        <li>
+          <section class="list-item">
+            <h2 class="list-item__title">
+              Салон автомобиля нуждается в чистке (химчистке):
+            </h2>
+
+            <div class="list-item__content">
+              <div class="image__container">
+                <img src="./assets/inside.png" alt="" />
+              </div>
+
+              <div>
+                <ul>
+                  <li>
+                    <section class="list-item list-item--inline">
+                      <h2 class="list-item__title">частичной</h2>
+
+                      <p class="list-item__description">
+                        (элементы требющие уход обозначены на картинке)
+                      </p>
+
+                      <div class="price-checkbox">
+                        <input class="price-checkbox__check" type="checkbox" />
+                        <input class="price-checkbox__price" type="text" />
+                        <span class="price-checkbox__currency">грн</span>
+                      </div>
+                    </section>
+                  </li>
+
+                  <li>
+                    <section class="list-item list-item--inline">
+                      <h2 class="list-item__title">полной</h2>
+
+                      <p class="list-item__description">без разборки салона</p>
+
+                      <div class="price-checkbox">
+                        <input class="price-checkbox__check" type="checkbox" />
+                        <input class="price-checkbox__price" type="text" />
+                        <span class="price-checkbox__currency">грн</span>
+                      </div>
+                    </section>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Кожаная обивка салона автомобиля(сиденья; карты дверей; руль;
+              ручка АКПП; центральная консоль; торпедо) нуждается в пропитке и
+              защите кондиционером.
+            </h2>
+
+            <p class="list-item__description">
+              Кондиционер наноситстя исключительно на чистые поверхности.
+            </p>
+
+            <div class="price-checkbox">
+              <input class="price-checkbox__check" type="checkbox" />
+              <input class="price-checkbox__price" type="text" />
+              <span class="price-checkbox__currency">грн</span>
+            </div>
+          </section>
+        </li>
+      </ol>
+    </form>
+
+    <!-- ============== LEGACY ============== -->
+
+    <div class="container" style="display: none">
+      <header class="grid">
+        <h1>ЛИСТ ОСМОТРА АВТОМОБИЛЯ</h1>
+        <img src="./assets/logo-ua.svg" alt="Логотип" />
+      </header>
+
+      <!--Информация-->
+      <form action="">
+        <div class="form-section">
+          <div class="form-inline form-info">
+            <label for="customer">Заказчик (контакт, тел.):</label>
+            <input type="text" id="customer" name="customer" size="54" />
+          </div>
+
+          <div class="form-inline form-info">
+            <div class="form-inline">
+              <label for="car">Автомобиль:</label>
+              <input type="text" id="car" name="car" size="30" />
             </div>
 
-            <!--Салон чистка-->
-            <div class="form-section">
-                <h2>1. Салон автомобиля нуждается в чистке (химчистке):</h2>
+            <div class="form-inline form-info">
+              <label for="plate">Гос. номер:</label>
+              <input type="text" id="plate" name="plate" size="18" />
+            </div>
+          </div>
+        </div>
 
-                    <!--Схема салона-->
-                <div class="grid3">
-                    <div class="container2">
-                        <div class="car-images">
-                            <img src="inside.png" alt="Схема салона автомобиля">
-                        </div>
-                        <input type="checkbox" class="checkbox" style="top: 5%; left: 5%"> <!--Крыша-->
-                        <input type="checkbox" class="checkbox" style="top: 217px; left: 182px"> <!--Крышка багажника-->
-                        <input type="checkbox" class="checkbox" style="top: 310px; left: 182px"> <!--Задние сидения-->
-                        <input type="checkbox" class="checkbox" style="top: 385px; left: 182px"> <!--Подлокотник-->
-                        <input type="checkbox" class="checkbox" style="top: 405px; left: 140px"> <!--Пасажирское сидение-->
-                        <input type="checkbox" class="checkbox" style="top: 405px; left: 226px"> <!--Водительское сидение-->
-                        <input type="checkbox" class="checkbox" style="top: 470px; left: 140px"> <!--Торпедо--> 
-                        <input type="checkbox" class="checkbox" style="top: 477px; left: 226px"> <!--Руль-->
-                        <input type="checkbox" class="checkbox" style="top: 390px; left: 290px"> <!--Дверь1-->
-                        <input type="checkbox" class="checkbox" style="top: 310px; left: 290px"> <!--Дверь2-->
-                        <input type="checkbox" class="checkbox" style="top: 390px; left: 72px"> <!--Дверь3-->
-                        <input type="checkbox" class="checkbox" style="top: 310px; left: 72px"> <!--Дверь4-->
-                    </div>
-                        <ul>
-                            <!--Частичная чистка-->
-                            <li>
-                                <div class="form-group">
-                                    <label for="partial-clean">
-                                        частичной
-                                        <span>
-                                            (элементы требющие уход обозначены на картинке)
-                                        </span>
-                                    </label>
-                                    
-                                </div>
-                            </li>
+        <!--Салон чистка-->
+        <div class="form-section">
+          <h2>1. Салон автомобиля нуждается в чистке (химчистке):</h2>
 
-                            <!--Полная чистка без разбора-->
-                            <li>
-                                <div class="form-group">
-                                    <label for="full-clean">
-                                        полной
-                                        <span>
-                                            без разборки салона
-                                        </span>
-                                    </label>
-                                    
-                                </div>
-                            </li>
+          <!--Схема салона-->
+          <div class="grid3">
+            <div class="container2">
+              <div class="car-images">
+                <img src="./assets/inside.png" alt="Схема салона автомобиля" />
+              </div>
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 5%; left: 5%"
+              />
+              <!--Крыша-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 217px; left: 182px"
+              />
+              <!--Крышка багажника-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 310px; left: 182px"
+              />
+              <!--Задние сидения-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 385px; left: 182px"
+              />
+              <!--Подлокотник-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 405px; left: 140px"
+              />
+              <!--Пасажирское сидение-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 405px; left: 226px"
+              />
+              <!--Водительское сидение-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 470px; left: 140px"
+              />
+              <!--Торпедо-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 477px; left: 226px"
+              />
+              <!--Руль-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 390px; left: 290px"
+              />
+              <!--Дверь1-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 310px; left: 290px"
+              />
+              <!--Дверь2-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 390px; left: 72px"
+              />
+              <!--Дверь3-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 310px; left: 72px"
+              />
+              <!--Дверь4-->
+            </div>
+            <ul>
+              <!--Частичная чистка-->
+              <li>
+                <div class="form-group">
+                  <label for="partial-clean">
+                    частичной
+                    <span>
+                      (элементы требющие уход обозначены на картинке)
+                    </span>
+                  </label>
+                </div>
+              </li>
 
-                            <!--Полная чистка с разбором-->
-                            <li>
-                                <div class="form-group">
-                                    <label for="full-clean-disassembly">
-                                        полной
-                                        <span>
-                                            с частичным разбором салона
-                                        </span>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div>
-                            <div class="checkbox-list">
-                                <input type="checkbox" id="partial-clean" name="partial-clean">
-                                <div class="price-field">
-                                    <input type="text" name="partial-clean-price">
-                                    <label>грн</label>
-                                </div>
-                            </div>    
+              <!--Полная чистка без разбора-->
+              <li>
+                <div class="form-group">
+                  <label for="full-clean">
+                    полной
+                    <span> без разборки салона </span>
+                  </label>
+                </div>
+              </li>
 
-                            <div class="checkbox-list">
-                                <input type="checkbox" id="full-clean-disassembly" name="full-clean-disassembly">
-                                <div class="price-field">
-                                    <input type="text" name="full-clean-disassembly-price">
-                                    <label>грн</label>
-                                </div>
-                            </div>
+              <!--Полная чистка с разбором-->
+              <li>
+                <div class="form-group">
+                  <label for="full-clean-disassembly">
+                    полной
+                    <span> с частичным разбором салона </span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <div>
+              <div class="checkbox-list">
+                <input
+                  type="checkbox"
+                  id="partial-clean"
+                  name="partial-clean"
+                />
+                <div class="price-field">
+                  <input type="text" name="partial-clean-price" />
+                  <label>грн</label>
+                </div>
+              </div>
 
-                            <div class="checkbox-list">
-                                <input type="checkbox" id="full-clean" name="full-clean">
-                                <div class="price-field">
-                                    <input type="text" name="full-clean-price">
-                                    <label>грн</label>
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                    <div>
-                        <p>
-                            Для кожаных поверхностей после чистки (химчистки) рекомендуется пропитать
-                            их защитным составом, кондиционером либо кварцевым покрытием. Рекомендуется чистить
-                            автомобильную обивку не реже двух раз в год
-                        </p> 
-                    </div>
-                     
+              <div class="checkbox-list">
+                <input
+                  type="checkbox"
+                  id="full-clean-disassembly"
+                  name="full-clean-disassembly"
+                />
+                <div class="price-field">
+                  <input type="text" name="full-clean-disassembly-price" />
+                  <label>грн</label>
+                </div>
+              </div>
+
+              <div class="checkbox-list">
+                <input type="checkbox" id="full-clean" name="full-clean" />
+                <div class="price-field">
+                  <input type="text" name="full-clean-price" />
+                  <label>грн</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>
+              Для кожаных поверхностей после чистки (химчистки) рекомендуется
+              пропитать их защитным составом, кондиционером либо кварцевым
+              покрытием. Рекомендуется чистить автомобильную обивку не реже двух
+              раз в год
+            </p>
+          </div>
+        </div>
+
+        <!--Обивка-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              2. Кожаная обивка салона автомобиля(сиденья; карты дверей; руль;
+              ручка АКПП; центральная консоль; торпедо) нуждается в пропитке и
+              защите кондиционером
+              <span>
+                Кондиционер наноситстя исключительно на чистые поверхности
+              </span>
+            </h2>
+            <div>
+              <input
+                type="checkbox"
+                id="leather-protection"
+                name="leather-protection"
+              />
+              <div class="price-field">
+                <input type="text" name="leather-protection-price" />
+                <label>грн</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Кузов чистка-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              3. Кузов автомобиля нуждается в чистке от битума и металлических
+              вкраплений
+              <span>
+                Рекомендуется после чистки кузова авто защитить ЛКП воском либо
+                защитным агентом
+              </span>
+            </h2>
+
+            <div>
+              <input type="checkbox" id="body-clean" name="body-clean" />
+              <div class="price-field">
+                <input type="text" name="body-clean-price" />
+                <label>грн</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Кузов полировка-->
+        <div class="form-section">
+          <h2>4. Кузов автомобиля нуждается в полировке:</h2>
+
+          <!--Схема авто-->
+          <div class="grid3">
+            <div class="container2">
+              <div class="car-images">
+                <img src="./assets/outside.png" alt="Схема автомобиля" />
+              </div>
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 41px; left: 182px"
+              />
+              <!--Бампер-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 120px; left: 182px"
+              />
+              <!--Крышка багажника-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 290px; left: 182px"
+              />
+              <!--Задние сидения-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 385px; left: 182px"
+              />
+              <!--Подлокотник-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 405px; left: 140px"
+              />
+              <!--Пасажирское сидение-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 405px; left: 226px"
+              />
+              <!--Водительское сидение-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 470px; left: 140px"
+              />
+              <!--Торпедо-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 477px; left: 226px"
+              />
+              <!--Руль-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 390px; left: 290px"
+              />
+              <!--Дверь1-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 310px; left: 290px"
+              />
+              <!--Дверь2-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 390px; left: 72px"
+              />
+              <!--Дверь3-->
+              <input
+                type="checkbox"
+                class="checkbox"
+                style="top: 310px; left: 72px"
+              />
+              <!--Дверь4-->
             </div>
 
-            <!--Обивка-->
-            <div class="form-section">
-                    <div class="form-group grid">
-                        <h2>2. Кожаная обивка салона автомобиля(сиденья; карты дверей; руль; 
-                            ручка АКПП; центральная консоль; торпедо) нуждается в пропитке и защите кондиционером
-                            <span>
-                                Кондиционер наноситстя исключительно на чистые поверхности
-                            </span>
-                        </h2>
-                        <div>
-                            <input type="checkbox" id="leather-protection" name="leather-protection">
-                            <div class="price-field">
-                                <input type="text" name="leather-protection-price">
-                                <label>грн</label>
-                            </div>
-                        </div> 
-                    </div>
+            <ul>
+              <!--Чистичная полировка-->
+              <li>
+                <div class="form-group">
+                  <label for="partial-polish">
+                    частичной
+                    <span>
+                      (элементы требющие уход обозначены на картинке)
+                    </span>
+                  </label>
+                </div>
+              </li>
+
+              <!--Полная полировка-->
+              <li>
+                <div class="form-group">
+                  <label for="full-polish">полной</label>
+                </div>
+              </li>
+            </ul>
+            <div>
+              <div class="checkbox-list">
+                <input
+                  type="checkbox"
+                  id="partial-polish"
+                  name="partial-polish"
+                />
+                <div class="price-field">
+                  <input type="text" name="partial-polish-price" />
+                  <label>грн</label>
+                </div>
+              </div>
+
+              <div class="checkbox-list">
+                <input type="checkbox" id="full-polish" name="full-polish" />
+                <div class="price-field">
+                  <input type="text" name="full-polish-price" />
+                  <label>грн</label>
+                </div>
+              </div>
             </div>
+          </div>
+          <p>
+            Рекомендуется после полировки кузова защитить ЛКП автомобиля:
+            воском, защитным агентом, кварцевым покрытием
+          </p>
+        </div>
 
-            <!--Кузов чистка-->
-            <div class="form-section">
-                <div class="form-group grid">
-                    <h2>
-                        3. Кузов автомобиля нуждается в чистке от битума и металлических вкраплений
-                        <span>
-                            Рекомендуется после чистки кузова авто защитить ЛКП воском либо защитным агентом
-                        </span>
-                    </h2>
+        <!--Хромированные элементы-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              5. Хромированные (алюминиевые) декоративные элементы автомобиля
+              нуждаются в чистке
+            </h2>
 
-                    <div>
-                        <input type="checkbox" id="body-clean" name="body-clean">
-                        <div class="price-field">
-                            <input type="text" name="body-clean-price">
-                            <label>грн</label>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <input
+                type="checkbox"
+                id="elements-clean"
+                name="elements-clean"
+              />
+              <div class="price-field">
+                <input type="text" name="elements-clean-price" />
+                <label>грн</label>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!--Кузов полировка-->
-            <div class="form-section">
-                <h2>4. Кузов автомобиля нуждается в полировке:</h2>
+        <!--Декоративная насадка-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              6. Декоративная насадка на выхлопной системе нуждается в чистке
+            </h2>
 
-                <!--Схема авто-->
-                <div class="grid3">
-                    <div class="container2">
-                        <div class="car-images">
-                            <img src="outside.png" alt="Схема автомобиля">
-                        </div>
-                        <input type="checkbox" class="checkbox" style="top: 41px; left: 182px"> <!--Бампер-->
-                        <input type="checkbox" class="checkbox" style="top: 120px; left: 182px"> <!--Крышка багажника-->
-                        <input type="checkbox" class="checkbox" style="top: 290px; left: 182px"> <!--Задние сидения-->
-                        <input type="checkbox" class="checkbox" style="top: 385px; left: 182px"> <!--Подлокотник-->
-                        <input type="checkbox" class="checkbox" style="top: 405px; left: 140px"> <!--Пасажирское сидение-->
-                        <input type="checkbox" class="checkbox" style="top: 405px; left: 226px"> <!--Водительское сидение-->
-                        <input type="checkbox" class="checkbox" style="top: 470px; left: 140px"> <!--Торпедо--> 
-                        <input type="checkbox" class="checkbox" style="top: 477px; left: 226px"> <!--Руль-->
-                        <input type="checkbox" class="checkbox" style="top: 390px; left: 290px"> <!--Дверь1-->
-                        <input type="checkbox" class="checkbox" style="top: 310px; left: 290px"> <!--Дверь2-->
-                        <input type="checkbox" class="checkbox" style="top: 390px; left: 72px"> <!--Дверь3-->
-                        <input type="checkbox" class="checkbox" style="top: 310px; left: 72px"> <!--Дверь4-->
-                    </div>
-
-                    <ul>
-                        <!--Чистичная полировка-->
-                        <li>
-                            <div class="form-group">
-                                <label for="partial-polish">
-                                    частичной
-                                    <span>
-                                        (элементы требющие уход обозначены на картинке)
-                                    </span>
-                                </label> 
-                            </div>
-                        </li>
-
-                        <!--Полная полировка-->
-                        <li>
-                            <div class="form-group">
-                                <label for="full-polish">полной</lable>
-                            </div>
-                        </li>
-                    </ul>
-                    <div>
-                        <div class="checkbox-list">
-                            <input type="checkbox" id="partial-polish" name="partial-polish">
-                            <div class="price-field">
-                                <input type="text" name="partial-polish-price">
-                                <label>грн</label>
-                            </div>
-                        </div>        
-
-                        <div class="checkbox-list">
-                            <input type="checkbox" id="full-polish" name="full-polish">
-                            <div class="price-field">
-                                <input type="text" name="full-polish-price">
-                                <label>грн</label>
-                            </div>
-                        </div> 
-                    </div>    
-                </div>
-                <p>
-                    Рекомендуется после полировки кузова 
-                    защитить ЛКП автомобиля: воском, защитным агентом, кварцевым покрытием
-                </p>
-            </div>    
-            
-
-            <!--Хромированные элементы-->
-            <div class="form-section">
-                <div class="form-group grid">
-                    <h2>5. Хромированные (алюминиевые) декоративные элементы автомобиля нуждаются в чистке</h2>
-
-                    <div>
-                        <input type="checkbox" id="elements-clean" name="elements-clean">
-                        <div class="price-field">
-                            <input type="text" name="elements-clean-price">
-                            <label>грн</label>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <input type="checkbox" id="cap-clean" name="cap-clean" />
+              <div class="price-field">
+                <input type="text" name="cap-clean-price" />
+                <label>грн</label>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!--Декоративная насадка-->
-            <div class="form-section">
-                <div class="form-group grid">
-                    <h2>6. Декоративная насадка на выхлопной системе нуждается в чистке</h2>
+        <!--Чистка дисков-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              7. Диски автомобиля нуждаются в чистке
+              <span> (чистка производится безкислотным очистителем) </span>
+            </h2>
 
-                    <div>
-                        <input type="checkbox" id="cap-clean" name="cap-clean">
-                        <div class="price-field">
-                            <input type="text" name="cap-clean-price">
-                            <label>грн</label>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+              <input type="checkbox" id="wheels-clean" name="wheels-clean" />
+              <div class="price-field">
+                <input type="text" name="wheels-clean-price" />
+                <label>грн</label>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!--Чистка дисков-->
-            <div class="form-section">
-                <div class="form-group grid">
-                    <h2>
-                        7. Диски автомобиля нуждаются в чистке 
-                        <span>
-                            (чистка производится безкислотным очистителем)
-                        </span>
-                    </h2>
-
-                    <div class="form-group">
-                        <input type="checkbox" id="wheels-clean" name="wheels-clean">
-                        <div class="price-field">
-                            <input type="text" name="wheels-clean-price">
-                            <label>грн</label>
-                        </div>
-                    </div>
-                </div>
+        <!--Подкапотное пространство-->
+        <div class="form-section">
+          <div class="form-group grid">
+            <h2>
+              8. Подкапотное пространство (мотор) нуждается в мойке
+              <span>
+                Рекумендуется мыть подкапотное пространство один раз в год
+              </span>
+            </h2>
+            <div class="form-group">
+              <input
+                type="checkbox"
+                id="underhood-clean"
+                name="underhood-clean"
+              />
+              <div class="price-field">
+                <input type="text" name="underhood-clean-price" />
+                <label>грн</label>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!--Подкапотное пространство-->
-            <div class="form-section">
-                <div class="form-group grid">
-                    <h2>
-                        8. Подкапотное пространство (мотор) нуждается в мойке 
-                        <span>
-                            Рекумендуется мыть подкапотное пространство один раз в год
-                        </span>
-                    </h2>
-                    <div class="form-group">
-                        <input type="checkbox" id="underhood-clean" name="underhood-clean">
-                        <div class="price-field">
-                            <input type="text" name="underhood-clean-price">
-                            <label>грн</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!---->
+        <div class="form-section">
+          <div class="comments">
+            <input type="text" id="comments" name="comments" />
+          </div>
+        </div>
 
-            <!---->
-            <div class="form-section">
-                <div class="comments">
-                    <input type="text" id="comments" name="comments">
-                </div>
-            </div>
-
-            <div class="grid2">
-                <div class="date">
-                    <label for="date">Дата:</label>
-                    <input type="date" id="date" name="date">
-                </div>
-                <div class="manager">
-                    <label for="manager">Менеджер:</label>
-                    <input type="text" id="manager" name="manager">
-                </div>
-            </div>
-        </form>
+        <div class="grid2">
+          <div class="date">
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="manager">
+            <label for="manager">Менеджер:</label>
+            <input type="text" id="manager" name="manager" />
+          </div>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>
