@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 1px;
+  padding-block: 1.5rem;
 }
 
 body > * {
@@ -267,6 +267,10 @@ ol > li::marker {
 }
 
 @media print {
+  body {
+    padding: 1px;
+  }
+
   body > * {
     max-width: unset;
     margin: 0;
