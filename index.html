@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
+  <!-- TODO: check typos -->
   <body>
     <header class="header">
       <h1 class="header__title">Лист осмотра автомобиля</h1>
 
       <div class="header__logo logo">
         <b class="logo__title">Detailing</b>
-        <img class="logo__image" src="./assets/logo-ua.svg" alt="Logo" />
+        <img class="logo__image" src="./assets/logo.jpg" alt="Logo" />
+        <!-- <img class="logo__image" src="./assets/logo-ua.svg" alt="Logo" /> -->
       </div>
     </header>
 
     <form class="form">
       <div class="form__control">
-        <label for="customer">Заказчик (контакт, тел.):</label>
+        <label for="customer">Заказчик (контакт тел.):</label>
         <input type="text" id="customer" name="customer" />
       </div>
 
-      <div class="form__inline-group form__inline-group--2-1">
+      <div class="form__inline-group column--2-1">
         <div class="form__control">
           <label for="car">Автомобиль:</label>
           <input type="text" id="car" name="car" />
@@ -43,13 +45,13 @@
               Салон автомобиля нуждается в чистке (химчистке):
             </h2>
 
-            <div class="list-item__content">
+            <div class="list-item__content column--1-1">
               <div class="image__container">
                 <img src="./assets/inside.png" alt="" />
               </div>
 
-              <div>
-                <ul>
+              <div class="options-section">
+                <ul class="options-section__list">
                   <li>
                     <section class="list-item list-item--inline">
                       <h2 class="list-item__title">частичной</h2>
@@ -58,10 +60,15 @@
                         (элементы требющие уход обозначены на картинке)
                       </p>
 
-                      <div class="price-checkbox">
-                        <input class="price-checkbox__check" type="checkbox" />
-                        <input class="price-checkbox__price" type="text" />
-                        <span class="price-checkbox__currency">грн</span>
+                      <div class="list-item__content">
+                        <div class="price-checkbox">
+                          <input
+                            class="price-checkbox__check"
+                            type="checkbox"
+                          />
+                          <input class="price-checkbox__price" type="text" />
+                          <span class="price-checkbox__currency">грн</span>
+                        </div>
                       </div>
                     </section>
                   </li>
@@ -72,14 +79,51 @@
 
                       <p class="list-item__description">без разборки салона</p>
 
-                      <div class="price-checkbox">
-                        <input class="price-checkbox__check" type="checkbox" />
-                        <input class="price-checkbox__price" type="text" />
-                        <span class="price-checkbox__currency">грн</span>
+                      <div class="list-item__content">
+                        <div class="price-checkbox">
+                          <input
+                            class="price-checkbox__check"
+                            type="checkbox"
+                          />
+                          <input class="price-checkbox__price" type="text" />
+                          <span class="price-checkbox__currency">грн</span>
+                        </div>
+                      </div>
+                    </section>
+                  </li>
+
+                  <li>
+                    <section class="list-item list-item--inline">
+                      <h2 class="list-item__title">полной</h2>
+
+                      <p class="list-item__description">
+                        с частичным разбором салона
+                      </p>
+
+                      <div class="list-item__content">
+                        <div class="price-checkbox">
+                          <input
+                            class="price-checkbox__check"
+                            type="checkbox"
+                          />
+                          <input class="price-checkbox__price" type="text" />
+                          <span class="price-checkbox__currency">грн</span>
+                        </div>
                       </div>
                     </section>
                   </li>
                 </ul>
+
+                <p class="options-section__description">
+                  Для кожаных поверхностей после чистки (химчистки)
+                  рекомендуется пропитать их защитным составом, кондиционером
+                  либо кварцевым покрытием.
+                </p>
+
+                <p class="options-section__description">
+                  Рекомендуется чистить автомобильную обивку не реже двух раз в
+                  год.
+                </p>
               </div>
             </div>
           </section>
@@ -88,7 +132,7 @@
         <li>
           <section class="list-item list-item--inline">
             <h2 class="list-item__title">
-              Кожаная обивка салона автомобиля(сиденья; карты дверей; руль;
+              Кожаная обивка салона автомобиля (сиденья; карты дверей; руль;
               ручка АКПП; центральная консоль; торпедо) нуждается в пропитке и
               защите кондиционером.
             </h2>
@@ -97,14 +141,188 @@
               Кондиционер наноситстя исключительно на чистые поверхности.
             </p>
 
-            <div class="price-checkbox">
-              <input class="price-checkbox__check" type="checkbox" />
-              <input class="price-checkbox__price" type="text" />
-              <span class="price-checkbox__currency">грн</span>
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Кузов автомобиля нуждается в чистке от битума и металлических
+              вкраплений
+            </h2>
+
+            <p class="list-item__description">
+              Рекомендуется после чистки кузова авто защитить ЛКП воском либо
+              защитным агентом
+            </p>
+
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item">
+            <h2 class="list-item__title">
+              Кузов автомобиля нуждается в полировке:
+            </h2>
+
+            <div class="list-item__content column--1-1">
+              <div class="image__container">
+                <img src="./assets/inside.png" alt="" />
+              </div>
+
+              <div class="options-section">
+                <ul class="options-section__list">
+                  <li>
+                    <section class="list-item list-item--inline">
+                      <h2 class="list-item__title">частичной</h2>
+
+                      <p class="list-item__description">
+                        (элементы требющие уход обозначены на картинке)
+                      </p>
+
+                      <div class="list-item__content">
+                        <div class="price-checkbox">
+                          <input
+                            class="price-checkbox__check"
+                            type="checkbox"
+                          />
+                          <input class="price-checkbox__price" type="text" />
+                          <span class="price-checkbox__currency">грн</span>
+                        </div>
+                      </div>
+                    </section>
+                  </li>
+
+                  <li>
+                    <section class="list-item list-item--inline">
+                      <h2 class="list-item__title">полной</h2>
+
+                      <div class="list-item__content">
+                        <div class="price-checkbox">
+                          <input
+                            class="price-checkbox__check"
+                            type="checkbox"
+                          />
+                          <input class="price-checkbox__price" type="text" />
+                          <span class="price-checkbox__currency">грн</span>
+                        </div>
+                      </div>
+                    </section>
+                  </li>
+                </ul>
+
+                <p class="options-section__description">
+                  Рекомендуется после полировки кузова защитить ЛКП автомобиля:
+                  воском, защитным агентом, кварцевым покрытием.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Хромированные (алюминиевые) декоративные элементы автомобиля
+              нуждаются в чистке
+            </h2>
+
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Декоративная насадка на выхлопной системе нуждается в чистке
+            </h2>
+
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Диски автомобиля нуждаются в чистке
+            </h2>
+
+            <p class="list-item__description">
+              (чистка производится безкислотным очистителем)
+            </p>
+
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li>
+          <section class="list-item list-item--inline">
+            <h2 class="list-item__title">
+              Подкапотное пространство (мотор) нуждается в мойке
+            </h2>
+
+            <p class="list-item__description">
+              Рекомендуется мыть подкапотное пространство один раз в год
+            </p>
+
+            <div class="list-item__content">
+              <div class="price-checkbox">
+                <input class="price-checkbox__check" type="checkbox" />
+                <input class="price-checkbox__price" type="text" />
+                <span class="price-checkbox__currency">грн</span>
+              </div>
             </div>
           </section>
         </li>
       </ol>
+
+      <div class="form__control">
+        <textarea d="comments" name="comments"></textarea>
+      </div>
+
+      <div class="form__inline-group column--1-1">
+        <div class="form__control">
+          <label for="date">Дата:</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <div class="form__control">
+          <label for="manager">Менеджер:</label>
+          <input type="text" id="manager" name="manager" />
+        </div>
+      </div>
     </form>
 
     <!-- ============== LEGACY ============== -->

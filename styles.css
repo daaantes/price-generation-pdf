@@ -2,14 +2,32 @@ body {
   font-family: Arial, sans-serif;
 }
 
+body > * {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul > li:not(:last-child),
+ol > li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+ol > li::marker {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
 .header {
   position: relative;
   display: grid;
+  align-items: center;
   grid-template-columns: 2fr 1fr;
 }
 
 .header__title {
   text-transform: uppercase;
+  font-size: 2rem;
 }
 
 .logo {
@@ -21,7 +39,12 @@ body {
 
 .logo__title {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.logo__image {
+  display: block;
+  width: 200px;
 }
 
 .form__control {
@@ -37,21 +60,13 @@ body {
   border-top: none;
   border-right: none;
   border-left: none;
-  line-height: 1.2rem;
+  line-height: 1.25rem;
   margin-bottom: 8px;
 }
 
 .form__inline-group {
   display: grid;
-  gap: 8px;
-}
-
-.form__inline-group--2-1 {
-  grid-template-columns: 2fr 1fr;
-}
-
-.form__inline-group--1-2-1 {
-  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
 }
 
 .price-checkbox {
@@ -72,19 +87,13 @@ body {
   border-top: none;
   border-right: none;
   border-left: none;
-  line-height: 1.2rem;
-  font-size: 1.2rem;
+  line-height: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .price-checkbox__currency {
-  line-height: 1.2rem;
-  font-size: 1.2rem;
-}
-
-.list-item__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  line-height: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .image__container {
@@ -109,9 +118,9 @@ body {
 }
 
 .list-item--inline {
-  gap: 1rem 2rem;
-  align-items: center;
-  justify-items: space-between;
+  gap: 0.5rem 2rem;
+  align-items: start;
+  grid-template-columns: 1fr auto;
   grid-template-areas:
     "li-title li-content"
     "li-description li-content";
@@ -120,6 +129,9 @@ body {
 .list-item__title {
   grid-area: li-title;
   margin: 0;
+  font-weight: normal;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
 }
 
 .list-item__description {
@@ -127,6 +139,35 @@ body {
   margin: 0;
 }
 
+.list-item__description:empty {
+  display: none;
+}
+
 .list-item__content {
   grid-area: li-content;
+  display: grid;
+  gap: 2rem;
+}
+
+.list-item__content li:first-child {
+  padding-top: 1rem;
+}
+
+.column--1-1 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.column--2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.options-section {
+  display: grid;
+  gap: 2rem;
+  grid-template-rows: 1fr auto;
+}
+
+.options-section__description {
+  align-self: flex-end;
+  margin: 0;
 }
