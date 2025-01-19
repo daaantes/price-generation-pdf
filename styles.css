@@ -108,6 +108,12 @@ ol > li::marker {
   width: 100%;
 }
 
+.image__container input[type=checkbox] {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+}
+
 .list-item {
   display: grid;
   width: 100%;
