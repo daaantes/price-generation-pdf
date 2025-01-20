@@ -154,6 +154,7 @@ ol > li::marker {
 
 .image__container input[type="checkbox"] {
   position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .list-item {
