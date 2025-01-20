@@ -355,6 +355,16 @@
           <input type="text" id="manager" name="manager" />
         </div>
       </div>
+
+      <button id="saveBtn" type="button" class="print-button">Готово</button>
     </form>
+
+    <script>
+      const saveBtn = document.getElementById("saveBtn");
+
+      saveBtn.onclick = () => {
+        window.print();
+      };
+    </script>
   </body>
 </html>

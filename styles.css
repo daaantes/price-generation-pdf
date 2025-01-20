@@ -221,6 +221,25 @@ ol > li::marker {
   border-radius: 0.25rem;
 }
 
+.print-button {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.print-button:hover,
+.print-button:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.print-button:active {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @media screen and (min-width: 768px) {
   .list-item--inline {
     align-items: start;
@@ -302,5 +321,9 @@ ol > li::marker {
     grid-template-areas:
       "li-title li-content"
       "li-description li-content";
+  }
+
+  .print-button {
+    display: none;
   }
 }
