@@ -270,19 +270,71 @@
               <div class="image__container">
                 <img src="./assets/outside.png" alt="" />
 
-                <input type="checkbox" style="top: 4%; left: 49.5%" />
-                <input type="checkbox" style="top: 21%; left: 49.5%" />
-                <input type="checkbox" style="top: 53%; left: 49.5%" />
-                <input type="checkbox" style="top: 83%; left: 49.5%" />
-                <input type="checkbox" style="top: 95%; left: 49.5%" />
-                <input type="checkbox" style="top: 25%; left: 20%" />
-                <input type="checkbox" style="top: 25%; left: 79%" />
-                <input type="checkbox" style="top: 75%; left: 20%" />
-                <input type="checkbox" style="top: 75%; left: 79%" />
-                <input type="checkbox" style="top: 57%; left: 79%" />
-                <input type="checkbox" style="top: 43%; left: 79%" />
-                <input type="checkbox" style="top: 43%; left: 20%" />
-                <input type="checkbox" style="top: 57%; left: 20%" />
+                <input
+                  id="out-front-bumper" 
+                  type="checkbox" 
+                  style="top: 4%; left: 49.5%" 
+                />
+                <input 
+                  id="out-hood"
+                  type="checkbox" 
+                  style="top: 21%; left: 49.5%" 
+                />
+                <input 
+                  id="out-roof"
+                  type="checkbox" 
+                  style="top: 53%; left: 49.5%" 
+                />
+                <input 
+                  id="out-trunk"
+                  type="checkbox" 
+                  style="top: 83%; left: 49.5%" 
+                />
+                <input 
+                  id="out-rear-bumper"
+                  type="checkbox" 
+                  style="top: 95%; left: 49.5%" 
+                />
+                <input 
+                  id="out-left-front-wing"
+                  type="checkbox" 
+                  style="top: 25%; left: 20%" 
+                />
+                <input 
+                  id="out-right-front-wing"
+                  type="checkbox" 
+                  style="top: 25%; left: 79%" 
+                />
+                <input 
+                  id="out-left-rear-wing"
+                  type="checkbox" 
+                  style="top: 75%; left: 20%" 
+                />
+                <input 
+                  id="out-right-rear-wing"
+                  type="checkbox" 
+                  style="top: 75%; left: 79%" 
+                />
+                <input 
+                  id="out-right-rear-door"
+                  type="checkbox" 
+                  style="top: 57%; left: 79%" 
+                />
+                <input 
+                  id="out-right-front-door"
+                  type="checkbox" 
+                  style="top: 43%; left: 79%" 
+                />
+                <input 
+                  id="out-left-front-door"
+                  type="checkbox" 
+                  style="top: 43%; left: 20%" 
+                />
+                <input 
+                  id="out-left-rear-door"
+                  type="checkbox" 
+                  style="top: 57%; left: 20%" 
+                />
               </div>
 
               <div class="options-section">
@@ -298,10 +350,15 @@
                       <div class="list-item__content">
                         <div class="price-checkbox">
                           <input
+                            id="out-partial-check"
                             class="price-checkbox__check"
                             type="checkbox"
                           />
-                          <input class="price-checkbox__price" type="text" />
+                          <input 
+                            id="out-partial-price"
+                            class="price-checkbox__price" 
+                            type="text" 
+                          />
                           <span class="price-checkbox__currency">грн</span>
                         </div>
                       </div>
@@ -315,10 +372,15 @@
                       <div class="list-item__content">
                         <div class="price-checkbox">
                           <input
+                            id="out-full-check"
                             class="price-checkbox__check"
                             type="checkbox"
                           />
-                          <input class="price-checkbox__price" type="text" />
+                          <input
+                            id="out-full-price" 
+                            class="price-checkbox__price" 
+                            type="text" 
+                          />
                           <span class="price-checkbox__currency">грн</span>
                         </div>
                       </div>
@@ -344,8 +406,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input
+                  id="out-elements-check"
+                  class="price-checkbox__check" 
+                  type="checkbox" 
+                />
+                <input
+                  id="out-elements-price"
+                  class="price-checkbox__price" 
+                  type="text" 
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
@@ -360,8 +430,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input
+                  id="out-decorative-tip-check"
+                  class="price-checkbox__check" 
+                  type="checkbox" 
+                />
+                <input
+                  id="out-decorative-tip-price" 
+                  class="price-checkbox__price" 
+                  type="text" 
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
@@ -380,8 +458,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input 
+                  id="out-wheels-check"
+                  class="price-checkbox__check" 
+                  type="checkbox" 
+                />
+                <input 
+                  id="out-wheels-price"
+                  class="price-checkbox__price" 
+                  type="text" 
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
@@ -400,8 +486,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input
+                  id="out-under-hood-check"
+                  class="price-checkbox__check" 
+                  type="checkbox" 
+                />
+                <input 
+                  id="out-under-hood-price"
+                  class="price-checkbox__price" 
+                  type="text" 
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
