@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Лист осмотра автомобиля</title>
-
-    <link rel="stylesheet" href="./styles.css" />
   </head>
-
-  <!-- TODO: check typos -->
   <body>
     <header class="header">
       <h1 class="header__title">Лист осмотра автомобиля</h1>
@@ -16,7 +12,6 @@
       <div class="header__logo logo">
         <b class="logo__title">Detailing</b>
         <img class="logo__image" src="./assets/logo.jpg" alt="Logo" />
-        <!-- <img class="logo__image" src="./assets/logo-ua.svg" alt="Logo" /> -->
       </div>
     </header>
 
@@ -49,18 +44,66 @@
               <div class="image__container">
                 <img src="./assets/inside.png" alt="" />
 
-                <input type="checkbox" style="top: 13%; left: 49.5%" />
-                <input type="checkbox" style="top: 39%; left: 49.5%" />
-                <input type="checkbox" style="top: 59%; left: 18%" />
-                <input type="checkbox" style="top: 59%; left: 81.5%" />
-                <input type="checkbox" style="top: 59%; left: 49.5%" />
-                <input type="checkbox" style="top: 75%; left: 49.5%" />
-                <input type="checkbox" style="top: 78%; left: 63%" />
-                <input type="checkbox" style="top: 78%; left: 37%" />
-                <input type="checkbox" style="top: 75%; left: 18%" />
-                <input type="checkbox" style="top: 75%; left: 81.5%" />
-                <input type="checkbox" style="top: 92%; left: 37%" />
-                <input type="checkbox" style="top: 93%; left: 63%" />
+                <input
+                  id="ins-roof"
+                  type="checkbox"
+                  style="top: 13%; left: 49.5%"
+                />
+                <input
+                  id="ins-trunk"
+                  type="checkbox"
+                  style="top: 39%; left: 49.5%"
+                />
+                <input
+                  id="ins-right-rear-door"
+                  type="checkbox"
+                  style="top: 59%; left: 18%"
+                />
+                <input
+                  id="ins-left-rear-door"
+                  type="checkbox"
+                  style="top: 59%; left: 81.5%"
+                />
+                <input
+                  id="ins-rear-seats"
+                  type="checkbox"
+                  style="top: 59%; left: 49.5%"
+                />
+                <input
+                  id="ins-glove-compartment"
+                  type="checkbox"
+                  style="top: 75%; left: 49.5%"
+                />
+                <input
+                  id="ins-left-front-seat"
+                  type="checkbox"
+                  style="top: 78%; left: 63%"
+                />
+                <input
+                  id="ins-right-front-seat"
+                  type="checkbox"
+                  style="top: 78%; left: 37%"
+                />
+                <input
+                  id="ins-right-front-door"
+                  type="checkbox"
+                  style="top: 75%; left: 18%"
+                />
+                <input
+                  id="ins-left-front-door"
+                  type="checkbox"
+                  style="top: 75%; left: 81.5%"
+                />
+                <input
+                  id="ins-dashboard"
+                  type="checkbox"
+                  style="top: 92%; left: 37%"
+                />
+                <input
+                  id="ins-steering-wheel"
+                  type="checkbox"
+                  style="top: 93%; left: 63%"
+                />
               </div>
 
               <div class="options-section">
@@ -76,10 +119,15 @@
                       <div class="list-item__content">
                         <div class="price-checkbox">
                           <input
+                            id="ins-partial-check"
                             class="price-checkbox__check"
                             type="checkbox"
                           />
-                          <input class="price-checkbox__price" type="text" />
+                          <input
+                            id="ins-partial-price"
+                            class="price-checkbox__price"
+                            type="text"
+                          />
                           <span class="price-checkbox__currency">грн</span>
                         </div>
                       </div>
@@ -95,10 +143,15 @@
                       <div class="list-item__content">
                         <div class="price-checkbox">
                           <input
+                            id="ins-full-check"
                             class="price-checkbox__check"
                             type="checkbox"
                           />
-                          <input class="price-checkbox__price" type="text" />
+                          <input
+                            id="ins-full-price"
+                            class="price-checkbox__price"
+                            type="text"
+                          />
                           <span class="price-checkbox__currency">грн</span>
                         </div>
                       </div>
@@ -116,10 +169,15 @@
                       <div class="list-item__content">
                         <div class="price-checkbox">
                           <input
+                            id="ins-full-with-disassembly-check"
                             class="price-checkbox__check"
                             type="checkbox"
                           />
-                          <input class="price-checkbox__price" type="text" />
+                          <input
+                            id="ins-full-with-disassembly-price"
+                            class="price-checkbox__price"
+                            type="text"
+                          />
                           <span class="price-checkbox__currency">грн</span>
                         </div>
                       </div>
@@ -156,8 +214,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input
+                  id="leather-conditioner-check"
+                  class="price-checkbox__check"
+                  type="checkbox"
+                />
+                <input
+                  id="leather-conditioner-price"
+                  class="price-checkbox__price"
+                  type="text"
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
@@ -178,8 +244,16 @@
 
             <div class="list-item__content">
               <div class="price-checkbox">
-                <input class="price-checkbox__check" type="checkbox" />
-                <input class="price-checkbox__price" type="text" />
+                <input
+                  id="bitumen-cleaning-check"
+                  class="price-checkbox__check"
+                  type="checkbox"
+                />
+                <input
+                  id="bitumen-cleaning-price"
+                  class="price-checkbox__price"
+                  type="text"
+                />
                 <span class="price-checkbox__currency">грн</span>
               </div>
             </div>
@@ -358,13 +432,5 @@
 
       <button id="saveBtn" type="button" class="print-button">Готово</button>
     </form>
-
-    <script>
-      const saveBtn = document.getElementById("saveBtn");
-
-      saveBtn.onclick = () => {
-        window.print();
-      };
-    </script>
   </body>
 </html>

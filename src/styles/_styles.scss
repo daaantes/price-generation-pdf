@@ -40,17 +40,17 @@ ol > li::marker {
   gap: 0.75rem;
   grid-template-areas: "header-logo" "header-title";
   margin-bottom: 1rem;
-}
 
-.header__title {
-  grid-area: header-title;
-  text-transform: uppercase;
-  font-size: 1.75rem;
-  margin: 0;
-}
+  &__title {
+    grid-area: header-title;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    margin: 0;
+  }
 
-.header__logo {
-  grid-area: header-logo;
+  &__logo {
+    grid-area: header-logo;
+  }
 }
 
 .logo {
@@ -58,16 +58,16 @@ ol > li::marker {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.logo__title {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
 
-.logo__image {
-  display: block;
-  width: 150px;
+  &__image {
+    display: block;
+    width: 150px;
+  }
 }
 
 .form {
