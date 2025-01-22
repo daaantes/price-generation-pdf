@@ -1,8 +1,16 @@
 import "./styles/main.scss";
 import { PDF } from "./pdfGenerator";
 
+import logo from "./assets/logo.jpg";
+import inside from "./assets/inside.png";
+import outside from "./assets/outside.png";
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("date").valueAsDate = new Date();
+
+  document.getElementById("logo-image").src = logo;
+  document.getElementById("inside-image").src = inside;
+  document.getElementById("outside-image").src = outside;
 });
 
 document.getElementById("saveBtn").addEventListener("click", () => {
