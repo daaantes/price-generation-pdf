@@ -134,6 +134,77 @@ export class PDF {
      */
     offsetY +=
       this.gap * 0.75 +
+      this.#addText(
+        "Салон автомобиля нуждается в чистке (химчистке):",
+        this.#margin.left,
+        offsetY,
+        pageWidth - this.#margin.left - this.#margin.right,
+        14
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addServiceSection(
+        "частичной",
+        "(элементы требющие уход обозначены на картинке)",
+        data.insideCleaning.partial.checked,
+        data.insideCleaning.partial.price,
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addServiceSection(
+        "полной",
+        "без разборки салона",
+        data.insideCleaning.full.checked,
+        data.insideCleaning.full.price,
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addServiceSection(
+        "полной",
+        "с частичным разбором салона",
+        data.insideCleaning.fullWithDisassembly.checked,
+        data.insideCleaning.fullWithDisassembly.price,
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2
+      );
+
+    offsetY +=
+      this.gap * 0.25 +
+      this.#addText(
+        "Для кожаных поверхностей после чистки (химчистки) рекомендуется пропитать их защитным составом, кондиционером либо кварцевым покрытием.",
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2,
+        12
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addText(
+        "Рекомендуется чистить автомобильную обивку не реже двух раз в год.",
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2,
+        12
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
       this.#addServiceSection(
         "Кожаная обивка салона автомобиля (сиденья; карты дверей; руль; ручка АКПП; центральная консоль; торпедо) нуждается в пропитке и защите кондиционером.",
         "Кондиционер наноситстя исключительно на чистые поверхности.",
@@ -147,10 +218,10 @@ export class PDF {
     offsetY +=
       this.gap * 0.75 +
       this.#addServiceSection(
-        "Кузов автомобиля нуждается в чистке от битума и металлических вкраплений.", // TODO: set proper property
-        "Рекомендуется после чистки кузова авто защитить ЛКП воском либо защитным агентом.", // TODO: set proper property
-        data.leatherConditioner.checked,
-        data.leatherConditioner.price,
+        "Кузов автомобиля нуждается в чистке от битума и металлических вкраплений.",
+        "Рекомендуется после чистки кузова авто защитить ЛКП воском либо защитным агентом.",
+        data.bitumenCleaning.checked,
+        data.bitumenCleaning.price,
         this.#margin.left,
         offsetY,
         pageWidth - this.#margin.left - this.#margin.right
@@ -162,44 +233,94 @@ export class PDF {
 
     offsetY +=
       this.gap * 0.75 +
+      this.#addText(
+        "Кузов автомобиля нуждается в полировке:",
+        this.#margin.left,
+        offsetY,
+        pageWidth - this.#margin.left - this.#margin.right,
+        14
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addServiceSection(
+        "частичной",
+        "(элементы требющие уход обозначены на картинке)",
+        data.outsidePolish.partial.checked,
+        data.outsidePolish.partial.price,
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addServiceSection(
+        "полной",
+        undefined,
+        data.outsidePolish.full.checked,
+        data.outsidePolish.full.price,
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
+      this.#addText(
+        "Рекомендуется после полировки кузова защитить ЛКП автомобиля: воском, защитным агентом, кварцевым покрытием.",
+        (pageWidth + this.gap * 0.5) / 2,
+        offsetY,
+        (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) /
+          2,
+        12
+      );
+
+    offsetY +=
+      this.gap * 0.75 +
       this.#addServiceSection(
         "Хромированные (алюминиевые) декоративные элементы автомобиля нуждаются в чистке.",
         undefined,
-        data.leatherConditioner.checked, // TODO: set proper property
-        data.leatherConditioner.price, // TODO: set proper property
+        data.detailsCleaning.checked,
+        data.detailsCleaning.price,
         this.#margin.left,
         offsetY,
         pageWidth - this.#margin.left - this.#margin.right
       );
+
     offsetY +=
       this.gap * 0.75 +
       this.#addServiceSection(
         "Декоративная насадка на выхлопной системе нуждается в чистке.",
         undefined,
-        data.leatherConditioner.checked, // TODO: set proper property
-        data.leatherConditioner.price, // TODO: set proper property
+        data.decorativeTipCleaning.checked,
+        data.decorativeTipCleaning.price,
         this.#margin.left,
         offsetY,
         pageWidth - this.#margin.left - this.#margin.right
       );
+
     offsetY +=
       this.gap * 0.75 +
       this.#addServiceSection(
         "Диски автомобиля нуждаются в чистке.",
         "(чистка производится безкислотным очистителем)",
-        data.leatherConditioner.checked, // TODO: set proper property
-        data.leatherConditioner.price, // TODO: set proper property
+        data.wheelsCleaning.checked,
+        data.wheelsCleaning.price,
         this.#margin.left,
         offsetY,
         pageWidth - this.#margin.left - this.#margin.right
       );
+
     offsetY +=
       this.gap * 0.75 +
       this.#addServiceSection(
         "Подкапотное пространство (мотор) нуждается в мойке.",
         "Рекомендуется мыть подкапотное пространство один раз в год.",
-        data.leatherConditioner.checked, // TODO: set proper property
-        data.leatherConditioner.price, // TODO: set proper property
+        data.underHoodCleaning.checked,
+        data.underHoodCleaning.price,
         this.#margin.left,
         offsetY,
         pageWidth - this.#margin.left - this.#margin.right
@@ -208,8 +329,43 @@ export class PDF {
     /**
      * FOOTER
      */
+    this.#addText(
+      `Дата: ${data.date}`,
+      this.#margin.left,
+      pageHeight - this.#margin.bottom,
+      (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) / 2,
+      14,
+      undefined,
+      undefined,
+      "before"
+    );
 
-    this.#doc.save("inspection-sheet.pdf");
+    const footerHeight =
+      this.gap * 0.75 +
+      this.#addText(
+        `Менеджер: ${data.manager}`,
+        pageWidth / 2,
+        pageHeight - this.#margin.bottom,
+        (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) /
+          2,
+        14,
+        undefined,
+        undefined,
+        "before"
+      );
+
+    this.#addText(
+      data.comments,
+      this.#margin.left,
+      pageHeight - this.#margin.bottom - footerHeight,
+      pageWidth - this.#margin.left - this.#margin.right,
+      12,
+      undefined,
+      undefined,
+      "before"
+    );
+
+    this.#doc.save(`${data.car} ${data.plate} - ${data.date}.pdf`);
   }
 
   #addText(
@@ -337,6 +493,14 @@ export class PDF {
       400,
       undefined,
       "before"
+    );
+
+    this.#doc.setLineWidth(0.5);
+    this.#doc.line(
+      offsetX + maxWidth - priceWidth - this.gap * 0.5 - currencyWidth,
+      offsetY + checkBoxWidth,
+      offsetX + maxWidth - this.gap * 0.5 - currencyWidth,
+      offsetY + checkBoxWidth
     );
 
     this.#doc
