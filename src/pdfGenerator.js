@@ -53,26 +53,15 @@ export class PDF {
      * HEADER
      */
 
-    const logoWidth = 70;
-    const logoHeight = 70;
+    const logoWidth = 80;
+    const logoHeight = 80;
 
-    // TODO: center text
-    const logoNameHeight =
-      this.gap * 0.25 +
-      this.#addText(
-        "Detailing".toUpperCase(),
-        pageWidth - this.#margin.right - logoWidth,
-        offsetTop,
-        logoWidth,
-        14,
-        400,
-        "center"
-      );
+    this.#doc.setFontSize(16);
 
-    const logoSize = this.#addImage(
+    this.#addImage(
       logo,
       pageWidth - this.#margin.right,
-      offsetTop + logoNameHeight,
+      offsetTop + this.gap * 0.25,
       logoWidth,
       logoHeight,
       "before",
@@ -80,55 +69,66 @@ export class PDF {
     );
 
     this.#addText(
-      "Лист осмотра автомобиля".toUpperCase(),
-      this.#margin.left,
-      offsetTop,
+      "Detailing".toUpperCase(),
       pageWidth -
-        logoSize.width -
-        this.#margin.left -
         this.#margin.right -
-        this.gap,
-      18
+        logoWidth +
+        (logoWidth - this.#doc.getTextWidth("Detailing".toUpperCase())) / 2,
+      offsetTop,
+      logoWidth,
+      16,
+      700
     );
 
-    offsetTop += logoNameHeight + logoSize.height + this.gap * 0.75;
+    offsetTop += logoHeight;
+
+    this.#addText(
+      "Лист осмотра автомобиля".toUpperCase(),
+      this.#margin.left,
+      offsetTop / 2,
+      pageWidth - logoWidth - this.#margin.left - this.#margin.right - this.gap,
+      24,
+      700
+    );
 
     /**
      * CUSTOMER INFO
      */
     offsetTop +=
       this.gap * 0.5 +
-      this.#addText(
-        `Заказчик (контакт тел.): ${data.customer}`,
+      this.#addTextFormField(
+        "Заказчик (контакт тел.)",
+        data.customer,
         this.#margin.left,
         offsetTop,
-        pageWidth - this.#margin.left - this.#margin.right,
-        14
+        pageWidth - this.#margin.left - this.#margin.right
       );
 
-    const carPlateWidth = 150;
+    const carPlateWidth = 140;
 
-    this.#addText(
-      `Автомобиль: ${data.car}`,
+    const carNameHeight = this.#addTextFormField(
+      "Автомобиль",
+      data.car,
       this.#margin.left,
       offsetTop,
       pageWidth -
         this.#margin.left -
         this.#margin.right -
         this.gap * 0.5 -
-        carPlateWidth,
-      14
+        carPlateWidth
+    );
+
+    const carPalteHeight = this.#addTextFormField(
+      "Гос. номер",
+      data.plate,
+      pageWidth - this.#margin.right - carPlateWidth,
+      offsetTop,
+      carPlateWidth
     );
 
     offsetTop +=
       this.gap * 0.75 +
-      this.#addText(
-        `Гос. номер: ${data.plate}`,
-        pageWidth - this.#margin.right - carPlateWidth,
-        offsetTop,
-        carPlateWidth,
-        14
-      );
+      (carNameHeight > carPalteHeight ? carNameHeight : carPalteHeight);
 
     /**
      * SERVICES LIST PAGE 1
@@ -262,30 +262,29 @@ export class PDF {
         14
       );
 
-    this.#addText(
-      `Дата: ${data.date}`,
+    const dateHeight = this.#addTextFormField(
+      "Дата",
+      data.date,
       this.#margin.left,
       pageHeight - offsetBottom,
       (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) / 2,
-      14,
-      undefined,
-      undefined,
-      "before"
+      true
+    );
+
+    const managerNameHeight = this.#addTextFormField(
+      "Менеджер",
+      data.manager,
+      this.#margin.left +
+        this.gap * 0.5 +
+        (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) /
+          2,
+      pageHeight - offsetBottom,
+      (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) / 2,
+      true
     );
 
     offsetBottom +=
-      this.gap * 0.75 +
-      this.#addText(
-        `Менеджер: ${data.manager}`,
-        pageWidth / 2,
-        pageHeight - offsetBottom,
-        (pageWidth - this.#margin.left - this.#margin.right - this.gap * 0.5) /
-          2,
-        14,
-        undefined,
-        undefined,
-        "before"
-      );
+      dateHeight > managerNameHeight ? dateHeight : managerNameHeight;
 
     offsetBottom +=
       this.gap * 0.75 +
@@ -577,26 +576,85 @@ export class PDF {
       offsetY + checkBoxWidth
     );
 
-    this.#doc
-      .setFillColor("#0096FF")
-      .roundedRect(
-        offsetX +
-          maxWidth -
-          checkBoxWidth -
-          priceWidth -
-          this.gap -
-          currencyWidth,
-        offsetY,
-        checkBoxWidth,
-        checkBoxWidth,
-        4,
-        4,
-        checked ? "FD" : "S"
-      );
+    this.#doc.roundedRect(
+      offsetX +
+        maxWidth -
+        checkBoxWidth -
+        priceWidth -
+        this.gap -
+        currencyWidth,
+      offsetY,
+      checkBoxWidth,
+      checkBoxWidth,
+      4,
+      4,
+      "S"
+    );
+
+    if (checked) {
+      this.#doc
+        .setFillColor("#000000")
+        .roundedRect(
+          offsetX +
+            maxWidth -
+            checkBoxWidth -
+            priceWidth -
+            this.gap -
+            currencyWidth +
+            (checkBoxWidth * 0.5) / 4,
+          offsetY + (checkBoxWidth * 0.5) / 4,
+          checkBoxWidth * 0.75,
+          checkBoxWidth * 0.75,
+          2,
+          2,
+          "F"
+        );
+    }
 
     return checkBoxWidth > serviceSectionHeight
       ? checkBoxWidth
       : serviceSectionHeight;
+  }
+
+  #addTextFormField(label, value, offsetX, offsetY, maxWidth, reverse = false) {
+    label = `${label.trim()}:`;
+
+    this.#addText(
+      label,
+      offsetX,
+      offsetY,
+      maxWidth,
+      12,
+      undefined,
+      undefined,
+      reverse ? "before" : "after"
+    );
+
+    const gap = this.gap * 0.25;
+    const labelWidth = this.#doc.getTextWidth(label) + gap;
+
+    const textHeight = this.#addText(
+      value,
+      offsetX + labelWidth + gap,
+      offsetY,
+      maxWidth - labelWidth - gap,
+      12,
+      undefined,
+      undefined,
+      reverse ? "before" : "after"
+    );
+
+    const lineOffsetTop = reverse ? offsetY : offsetY + textHeight;
+
+    this.#doc.setLineWidth(0.5);
+    this.#doc.line(
+      offsetX + labelWidth,
+      lineOffsetTop,
+      offsetX + maxWidth,
+      lineOffsetTop
+    );
+
+    return textHeight;
   }
 
   #getTextHeight(lines, fontSize) {
