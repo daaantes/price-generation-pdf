@@ -25,23 +25,80 @@ document.getElementById("saveBtn").addEventListener("click", () => {
       partial: {
         checked: document.getElementById("ins-partial-check").checked,
         price: document.getElementById("ins-partial-price").value,
-        elements: {
-          roof: document.getElementById("ins-roof").checked,
-          trunk: document.getElementById("ins-trunk").checked,
-          rightRearDoor: document.getElementById("ins-right-rear-door").checked,
-          leftRearDoor: document.getElementById("ins-left-rear-door").checked,
-          rearSeats: document.getElementById("ins-rear-seats").checked,
-          gloveCompartment: document.getElementById("ins-glove-compartment")
-            .checked,
-          leftFrontSeat: document.getElementById("ins-left-front-seat").checked,
-          rightFrontSeat: document.getElementById("ins-right-front-seat")
-            .checked,
-          rightFrontDoor: document.getElementById("ins-right-front-door")
-            .checked,
-          leftFrontDoor: document.getElementById("ins-left-front-door").checked,
-          dashboard: document.getElementById("ins-dashboard").checked,
-          steeringWheel: document.getElementById("ins-steering-wheel").checked,
-        },
+        elements: [
+          {
+            name: "roof",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-roof").checked,
+          },
+          {
+            name: "trunk",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-trunk").checked,
+          },
+          {
+            name: "rightRearDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-right-rear-door").checked,
+          },
+          {
+            name: "leftRearDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-left-rear-door").checked,
+          },
+          {
+            name: "rearSeats",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-rear-seats").checked,
+          },
+          {
+            name: "gloveCompartment",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-glove-compartment").checked,
+          },
+          {
+            name: "leftFrontSeat",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-left-front-seat").checked,
+          },
+          {
+            name: "rightFrontSeat",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-right-front-seat").checked,
+          },
+          {
+            name: "rightFrontDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-right-front-door").checked,
+          },
+          {
+            name: "leftFrontDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-left-front-door").checked,
+          },
+          {
+            name: "dashboard",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-dashboard").checked,
+          },
+          {
+            name: "steeringWheel",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("ins-steering-wheel").checked,
+          },
+        ],
       },
       full: {
         checked: document.getElementById("ins-full-check").checked,
@@ -65,23 +122,86 @@ document.getElementById("saveBtn").addEventListener("click", () => {
       partial: {
         checked: document.getElementById("out-partial-check").checked,
         price: document.getElementById("out-partial-price").value,
-        elements: {
-          frontBumper: document.getElementById("out-front-bumper").checked,
-          hood: document.getElementById("out-hood").checked,
-          roof: document.getElementById("out-roof").checked,
-          trunk: document.getElementById("out-trunk").checked,
-          rearBumper: document.getElementById("out-rear-bumper").checked,
-          leftFrontWing: document.getElementById("out-left-front-wing").checked,
-          rightFrontWing: document.getElementById("out-right-front-wing")
-            .checked,
-          leftRearWing: document.getElementById("out-left-rear-wing").checked,
-          rightRearWing: document.getElementById("out-right-rear-wing").checked,
-          rightRearDoor: document.getElementById("out-right-rear-door").checked,
-          rightFrontDoor: document.getElementById("out-right-front-door")
-            .checked,
-          leftFrontDoor: document.getElementById("out-left-front-door").checked,
-          leftRearDoor: document.getElementById("out-left-rear-door").checked,
-        },
+        elements: [
+          {
+            name: "frontBumper",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-front-bumper").checked,
+          },
+          {
+            name: "hood",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-hood").checked,
+          },
+          {
+            name: "roof",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-roof").checked,
+          },
+          {
+            name: "trunk",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-trunk").checked,
+          },
+          {
+            name: "rearBumper",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-rear-bumper").checked,
+          },
+          {
+            name: "leftFrontWing",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-left-front-wing").checked,
+          },
+          {
+            name: "rightFrontWing",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-right-front-wing").checked,
+          },
+          {
+            name: "leftRearWing",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-left-rear-wing").checked,
+          },
+          {
+            name: "rightRearWing",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-right-rear-wing").checked,
+          },
+          {
+            name: "rightRearDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-right-rear-door").checked,
+          },
+          {
+            name: "rightFrontDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-right-front-door").checked,
+          },
+          {
+            name: "leftFrontDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-left-front-door").checked,
+          },
+          {
+            name: "leftRearDoor",
+            posX: 0,
+            posY: 0,
+            checked: document.getElementById("out-left-rear-door").checked,
+          },
+        ],
       },
       full: {
         checked: document.getElementById("out-full-check").checked,

@@ -177,6 +177,37 @@ export class PDF {
       pageHeight - offsetTop - offsetBottom
     );
 
+    data.insideCleaning.partial.elements.forEach((el) => {
+      const checkBoxWidth = 12;
+      const { posX, posY } = el;
+
+      this.#doc.setLineWidth(0.5);
+
+      this.#doc.roundedRect(
+        this.#margin.left + posX,
+        offsetTop + posY,
+        checkBoxWidth,
+        checkBoxWidth,
+        4,
+        4,
+        "S"
+      );
+
+      if (el.checked) {
+        this.#doc
+          .setFillColor("#000000")
+          .roundedRect(
+            this.#margin.left + posX + (checkBoxWidth * 0.5) / 4,
+            offsetTop + posY + (checkBoxWidth * 0.5) / 4,
+            checkBoxWidth * 0.75,
+            checkBoxWidth * 0.75,
+            2,
+            2,
+            "F"
+          );
+      }
+    });
+
     let descriptionOffsetTop = 0;
     descriptionOffsetTop +=
       this.gap * 0.75 +
@@ -358,6 +389,37 @@ export class PDF {
       (pageWidth - this.#margin.right - this.#margin.left - this.gap * 0.5) / 2,
       pageHeight - offsetTop - offsetBottom
     );
+
+    data.outsidePolish.partial.elements.forEach((el) => {
+      const checkBoxWidth = 12;
+      const { posX, posY } = el;
+
+      this.#doc.setLineWidth(0.5);
+
+      this.#doc.roundedRect(
+        this.#margin.left + posX,
+        offsetTop + posY,
+        checkBoxWidth,
+        checkBoxWidth,
+        4,
+        4,
+        "S"
+      );
+
+      if (el.checked) {
+        this.#doc
+          .setFillColor("#000000")
+          .roundedRect(
+            this.#margin.left + posX + (checkBoxWidth * 0.5) / 4,
+            offsetTop + posY + (checkBoxWidth * 0.5) / 4,
+            checkBoxWidth * 0.75,
+            checkBoxWidth * 0.75,
+            2,
+            2,
+            "F"
+          );
+      }
+    });
 
     this.#addText(
       "Рекомендуется после полировки кузова защитить ЛКП автомобиля: воском, защитным агентом, кварцевым покрытием.",
