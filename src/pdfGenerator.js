@@ -195,7 +195,7 @@ export class PDF {
 
       if (el.checked) {
         this.#doc
-          .setFillColor("#000000")
+          .setFillColor("#FFFFFF")
           .roundedRect(
             this.#margin.left + posX + (checkBoxWidth * 0.5) / 4,
             offsetTop + posY + (checkBoxWidth * 0.5) / 4,
@@ -205,6 +205,24 @@ export class PDF {
             2,
             "F"
           );
+          this.#doc
+            .setLineWidth(3) 
+            .setDrawColor("FF0000")
+            .line(
+              this.#margin.left + posX + checkBoxWidth * 0.2, 
+              offsetTop + posY + checkBoxWidth * 0.5, 
+              this.#margin.left + posX + checkBoxWidth * 0.49, 
+              offsetTop + posY + checkBoxWidth * 0.79 
+            )
+            .line(
+              this.#margin.left + posX + checkBoxWidth * 0.4, 
+              offsetTop + posY + checkBoxWidth * 0.7, 
+              this.#margin.left + posX + checkBoxWidth * 0.8, 
+              offsetTop + posY + checkBoxWidth * 0.3 
+            )
+
+            this.#doc
+              .setDrawColor("000000")
       }
     });
 
@@ -408,7 +426,7 @@ export class PDF {
 
       if (el.checked) {
         this.#doc
-          .setFillColor("#000000")
+          .setFillColor("#FFFFFF")
           .roundedRect(
             this.#margin.left + posX + (checkBoxWidth * 0.5) / 4,
             offsetTop + posY + (checkBoxWidth * 0.5) / 4,
@@ -418,8 +436,27 @@ export class PDF {
             2,
             "F"
           );
-      }
-    });
+
+          this.#doc
+            .setLineWidth(3) 
+            .setDrawColor("FF0000")
+            .line(
+              this.#margin.left + posX + checkBoxWidth * 0.2,
+              offsetTop + posY + checkBoxWidth * 0.5,
+              this.#margin.left + posX + checkBoxWidth * 0.49,
+              offsetTop + posY + checkBoxWidth * 0.79
+            )
+            .line(
+              this.#margin.left + posX + checkBoxWidth * 0.4,
+              offsetTop + posY + checkBoxWidth * 0.7,
+              this.#margin.left + posX + checkBoxWidth * 0.8,
+              offsetTop + posY + checkBoxWidth * 0.3
+            )
+
+            this.#doc
+              .setDrawColor("000000")
+              }     
+   });
 
     this.#addText(
       "Рекомендуется после полировки кузова защитить ЛКП автомобиля: воском, защитным агентом, кварцевым покрытием.",
@@ -655,14 +692,14 @@ export class PDF {
 
     if (checked) {
       this.#doc
-        .setFillColor("#000000")
+        .setFillColor("#FFFFFF")
         .roundedRect(
-          offsetX +
-            maxWidth -
-            checkBoxWidth -
-            priceWidth -
-            this.gap -
-            currencyWidth +
+          offsetX + 
+          maxWidth - 
+          checkBoxWidth - 
+          priceWidth - 
+          this.gap - 
+          currencyWidth +
             (checkBoxWidth * 0.5) / 4,
           offsetY + (checkBoxWidth * 0.5) / 4,
           checkBoxWidth * 0.75,
@@ -671,6 +708,28 @@ export class PDF {
           2,
           "F"
         );
+
+        const centerX = offsetX + maxWidth - checkBoxWidth - priceWidth - this.gap - currencyWidth + (checkBoxWidth * 0.5) / 4 + checkBoxWidth * 0.375;
+        const centerY = offsetY + (checkBoxWidth * 0.5) / 4 + checkBoxWidth * 0.375;
+      
+      
+        this.#doc
+          .setLineWidth(4) 
+          .setDrawColor("FF0000")
+          .line(
+            centerX - checkBoxWidth * 0.31,
+            centerY,
+            centerX + checkBoxWidth * 0.073,
+            centerY + checkBoxWidth * 0.25
+          )
+          .line(
+            centerX,
+            centerY + checkBoxWidth * 0.18,
+            centerX + checkBoxWidth * 0.3,
+            centerY - checkBoxWidth * 0.3
+          );
+            this.#doc
+              .setDrawColor("000000")
     }
 
     return checkBoxWidth > serviceSectionHeight
