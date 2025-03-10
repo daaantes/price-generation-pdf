@@ -1,0 +1,30 @@
+.header {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  text-align: center;
+  gap: 1rem;
+  grid-template-areas:
+    'header-logo'
+    'header-title';
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'header-title header-logo';
+    text-align: unset;
+  }
+
+  &__title {
+    grid-area: header-title;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  &__logo {
+    grid-area: header-logo;
+  }
+}
+

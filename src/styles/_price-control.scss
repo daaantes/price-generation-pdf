@@ -1,0 +1,31 @@
+@use 'input' as *;
+@use 'variables' as *;
+
+.price {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas: 'check amount currency';
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 84px auto;
+  }
+
+  &__currency {
+    grid-area: currency;
+  }
+
+  &__amount {
+    grid-area: amount;
+    @include input;
+  }
+
+  &__check {
+    grid-area: check;
+    width: 24px;
+    aspect-ratio: 1/1;
+    margin: 0;
+  }
+}
+

@@ -1,0 +1,61 @@
+@use 'input' as *;
+
+.form-field {
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-areas: 'label' 'input';
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'label input';
+  }
+
+  & > &__input,
+  & > &__textarea {
+    grid-area: input;
+    @include input;
+  }
+
+  & > &__textarea {
+    resize: none;
+    background-attachment: local;
+    line-height: 1.75rem;
+    background-image: repeating-linear-gradient(
+      white,
+      white calc(1.75rem - 1px),
+      #000 calc(1.75rem - 1px),
+      #000 1.75rem,
+      white 1.75rem
+    );
+    border: none;
+  }
+
+  & > &__label {
+    grid-area: label;
+    white-space: nowrap;
+    transition: color 250ms;
+  }
+
+  &.invalid > &__label {
+    color: hsl(10, 60%, 50%);
+  }
+
+  &--outline {
+    border: 1px solid #000;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  &--reverse {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'input label';
+  }
+
+  &--outline > &__input,
+  &--outline > &__textarea {
+    border: none;
+    padding: 0;
+  }
+}
+
